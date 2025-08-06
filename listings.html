@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Listings | York Realty</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger px-4">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white fw-bold" href="index.html">York Realty</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="ms-auto d-flex gap-2" id="nav-buttons-container">
+          <a href="index.html" class="btn btn-dark">Home</a>
+          <a href="listings.html" class="btn btn-dark">Listings</a>
+          <a href="create-listing.html" class="btn btn-dark">Create Listing</a>
+          <a href="faq.html" class="btn btn-dark">FAQ</a>
+          <a href="login.html" class="btn btn-dark" id="login-btn">Login</a>
+          <a href="register.html" class="btn btn-dark" id="register-btn">Register</a>
+          <button class="btn btn-dark d-none" id="logout-btn">Logout</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <div class="row g-2">
+      <div class="col-md-3">
+        <select id="homeType" class="form-select">
+          <option value="">Listing Type</option>
+          <option value="rent">Rent</option>
+          <option value="sale">Sale</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <select id="housingType" class="form-select">
+          <option value="">Housing Type</option>
+          <option value="apartment">Apartment</option>
+          <option value="house">House</option>
+          <option value="condo">Condo</option>
+          <option value="townhouse">Townhouse</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <select id="campus" class="form-select">
+          <option value="">Any Campus</option>
+          <option value="keele">Keele</option>
+          <option value="glendon">Glendon</option>
+          <option value="markham">Markham</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <select id="beds" class="form-select">
+          <option value="">Beds</option>
+          <option value="1">1 Bed</option>
+          <option value="2">2 Beds</option>
+          <option value="3">3 Beds</option>
+          <option value="4+">4+ Beds</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <select id="baths" class="form-select">
+          <option value="">Baths</option>
+          <option value="1">1 Bath</option>
+          <option value="2">2 Baths</option>
+          <option value="3">3 Baths</option>
+          <option value="4+">4+ Baths</option>
+        </select>
+      </div>
+      </div>
+  </div>
+
+  <div class="container mt-4">
+    <div class="row g-4" id="listings-container">
+      <div class="col-12 text-center">
+        <p>Loading listings...</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-danger text-white text-center py-3 mt-5">
+    <div class="container">
+      <p>&copy; 2025 York Realty. All Rights Reserved.</p>
+      <p>Built for York University students to find and post off-campus housing with ease.</p>
+      <p>Contact us at <a href="mailto:info@yorkrealty.ca" class="text-white fw-bold">info@yorkrealty.ca</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

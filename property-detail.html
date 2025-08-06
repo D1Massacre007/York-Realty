@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Property Details | York Realty</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger px-4">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white fw-bold" href="#">York Realty</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="ms-auto d-flex gap-2" id="nav-buttons-container">
+                    <a href="index.html" class="btn btn-dark">Home</a>
+                    <a href="listings.html" class="btn btn-dark">Listings</a>
+                    <a href="create-listing.html" class="btn btn-dark">Create Listing</a>
+                    <a href="faq.html" class="btn btn-dark">FAQ</a>
+                    <a href="login.html" class="btn btn-dark" id="login-btn">Login</a>
+                    <a href="register.html" class="btn btn-dark" id="register-btn">Register</a>
+                    <button class="btn btn-dark d-none" id="logout-btn">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <h2 class="text-center mb-4" id="pageTitle">Property Details</h2>
+
+        <div id="propertyDetailsContent">
+            <div class="row g-4">
+                <div class="col-md-7">
+                    <img src="#" id="propertyImage" class="img-fluid rounded shadow-sm mb-3" alt="Property Image">
+                </div>
+                <div class="col-md-5">
+                    <h3 id="propertyTitle"></h3>
+                    <p id="propertyPrice" class="lead fw-bold text-danger"></p>
+                    <p id="propertyHousingType"></p>
+                    <p id="propertyCampus"></p>
+                    <p><strong>Bedrooms:</strong> <span id="propertyBeds"></span></p>
+                    <p><strong>Bathrooms:</strong> <span id="propertyBaths"></span></p>
+                    <p><strong>Square Footage:</strong> <span id="propertySqFt"></span> sq ft</p>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <h4>Description</h4>
+                <p id="propertyDescription"></p>
+            </div>
+
+            <div class="mt-4">
+                <h4>Location Details</h4>
+                <p><strong>Address:</strong> <span id="propertyAddress"></span></p>
+                <p><strong>Postal Code:</strong> <span id="propertyPostalCode"></span></p>
+            </div>
+
+            <div class="mt-5">
+                <h4>Agent Information</h4>
+                <hr>
+                <p><strong>Agent Name:</strong> <span id="agentName"></span></p>
+                <p><strong>Email:</strong> <span id="agentEmail"></span></p>
+                <p><strong>Phone:</strong> <span id="agentPhone"></span></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-danger text-white text-center py-3 mt-auto">
+    <div class="container-fluid">
+        <p>&copy; 2025 York Realty. All Rights Reserved.</p>
+        <p>Built for York University students to find and post off-campus housing with ease.</p>
+        <p>Contact us at <a href="mailto:info@yorkrealty.ca" class="text-white fw-bold">info@yorkrealty.ca</a></p>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

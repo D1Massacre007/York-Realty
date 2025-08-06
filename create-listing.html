@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="create_listing_title">Create Listing | York Realty</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-transition-overlay" id="page-transition-overlay"></div>
+    <div id="alert-container" class="container mt-3" style="position: fixed; top: 70px; left: 50%; transform: translateX(-50%); z-index: 1050; max-width: 500px;"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger px-4">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white fw-bold" href="index.html">York Realty</a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="ms-auto d-flex gap-2" id="nav-buttons-container">
+                    <a href="index.html" class="btn btn-dark" data-i18n="nav_home">Home</a>
+                    <a href="listings.html" class="btn btn-dark" data-i18n="nav_listings">Listings</a>
+                    <a href="create-listing.html" class="btn btn-dark" data-i18n="nav_create_listing">Create Listing</a>
+                    <a href="faq.html" class="btn btn-dark" data-i18n="nav_faq">FAQ</a>
+                    <a href="login.html" class="btn btn-dark" id="login-btn" data-i18n="nav_login">Login</a>
+                    <a href="register.html" class="btn btn-dark" id="register-btn" data-i18n="nav_register">Register</a>
+                    <button class="btn btn-dark d-none" id="logout-btn" data-i18n="nav_logout">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <h2 class="text-center mb-4" data-i18n="create_listing_header">Create a New Property Listing</h2>
+
+        <div id="listingFormContainer" class="card p-4 shadow-sm">
+            <p class="text-muted text-center mb-4" data-i18n="create_listing_instructions">Fill out the form below to add a new property to our listings.</p>
+
+            <form id="create-listing-form" enctype="multipart/form-data">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="title" class="form-label" data-i18n="form_label_title">Property Title</label>
+                        <input type="text" class="form-control" id="title" name="title" data-i18n-placeholder="form_placeholder_title" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="listingType" class="form-label" data-i18n="form_label_listing_type">Listing Type</label>
+                        <select class="form-select" id="listingType" name="listing_type" required>
+                            <option value="rent" data-i18n="form_option_for_rent"> Rent</option>
+                            <option value="sale" data-i18n="form_option_for_sale"> Sale</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="housingType" class="form-label" data-i18n="form_label_housing_type">Housing Type</label>
+                        <select class="form-select" id="housingType" name="housing_type"required>
+                            <option value="apartment" data-i18n="housing_option_apartment">Apartment</option>
+                            <option value="house" data-i18n="housing_option_house">House</option>
+                            <option value="condo" data-i18n="housing_option_condo">Condo</option>
+                            <option value="townhouse" data-i18n="housing_option_townhouse">Townhouse</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="campus" class="form-label" data-i18n="form_label_campus">Campus</label>
+                        <select class="form-select" id="campus" name="campus" required>
+                            <option value="keele" data-i18n="campus_option_keele">Keele Campus</option>
+                            <option value="glendon" data-i18n="campus_option_glendon">Glendon Campus</option>
+                            <option value="markham" data-i18n="campus_option_markham">Markham Campus</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="bedrooms" class="form-label" data-i18n="form_label_bedrooms">Bedrooms</label>
+                        <input type="number" class="form-control" id="bedrooms" name="bedrooms" min="1" data-i18n-placeholder="form_placeholder_bedrooms" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="bathrooms" class="form-label" data-i18n="form_label_bathrooms">Bathrooms</label>
+                        <input type="number" class="form-control" id="bathrooms" name="bathrooms" step="0.5" min="1" data-i18n-placeholder="form_placeholder_bathrooms" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="squareFootage" class="form-label" data-i18n="form_label_sqft">Square Footage</label>
+                        <input type="number" class="form-control" id="squareFootage" name="square_footage" min="100" data-i18n-placeholder="form_placeholder_sqft" required>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="address" class="form-label" data-i18n="form_label_address">Address</label>
+                        <input type="text" class="form-control" id="address" name="address" data-i18n-placeholder="form_placeholder_address" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="postalCode" class="form-label" data-i18n="form_label_postal_code">Postal Code</label>
+                        <input type="text" class="form-control" id="postalCode" name="postal_code" placeholder="e.g., M1P 4P8" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="price" class="form-label" data-i18n="form_label_price">Price</label>
+                        <input type="number" class="form-control" id="price" name="price" step="0.01" min="1" data-i18n-placeholder="form_placeholder_price" required>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="propertyDescription" class="form-label" data-i18n="form_label_description">Property Description</label>
+                        <textarea class="form-control" id="propertyDescription" name="property_description" rows="5" data-i18n-placeholder="form_placeholder_description" required></textarea>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="imageFile" class="form-label" data-i18n="form_label_image">Property Image</label>
+                        <input type="file" class="form-control" id="imageFile" name="image_file" accept="image/*" required>
+                        <div class="form-text" data-i18n="form_text_image_upload">Upload a clear image of the property (Max 5MB).</div>
+                    </div>
+
+                    <div class="col-12 mt-4">
+                        <h4 data-i18n="form_header_agent_info">Agent/Contact Information</h4>
+                        <hr>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="agentName" class="form-label" data-i18n="form_label_agent_name">Your Name (Agent/Owner)</label>
+                        <input type="text" class="form-control" id="agentName" name="agent_name" data-i18n-placeholder="form_placeholder_agent_name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="agentEmail" class="form-label" data-i18n="form_label_agent_email">Your Email</label>
+                        <input type="email" class="form-control" id="agentEmail" name="agent_email" data-i18n-placeholder="form_placeholder_agent_email" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="agentPhone" class="form-label" data-i18n="form_label_agent_phone">Your Phone</label>
+                        <input type="tel" class="form-control" id="agentPhone" name="agent_phone" placeholder="e.g., 123-456-7890" required>
+                    </div>
+
+                    <div class="col-12 text-center mt-4">
+                        <button type="submit" class="btn btn-danger btn-lg" data-i18n="form_button_create_listing">Create Listing</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="bg-danger text-white text-center py-3 mt-auto">
+        <div class="container-fluid">
+            <p data-i18n="footer_copyright">&copy; 2025 York Realty. All Rights Reserved.</p>
+            <p data-i18n="footer_tagline">Built for York University students to find and post off-campus housing with ease.</p>
+            <p data-i18n="footer_contact_short">Contact us at <a href="mailto:info@yorkrealty.ca" class="text-white fw-bold">info@yorkrealty.ca</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="translations.js"></script> 
+    <script src="script.js"></script>
+</body>
+</html>

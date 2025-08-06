@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login | York Realty</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger px-4">
+    <a class="navbar-brand text-white fw-bold" href="index.html">York Realty</a>
+    <div class="ms-auto d-flex gap-2">
+      <a href="index.html" class="btn btn-dark">Home</a>
+      <a href="listings.html" class="btn btn-dark">Listings</a>
+      <a href="create-listing.html" class="btn btn-dark">Create Listing</a>
+      <a href="faq.html" class="btn btn-dark">FAQ</a>
+      <a href="login.html" class="btn btn-dark">Login</a>
+      <a href="register.html" class="btn btn-dark">Register</a>
+    </div>
+  </nav>
+
+  <div class="container mt-5 mb-5">
+    <h2 class="text-center mb-4">Login</h2>
+
+    <!-- Success message (initially hidden) -->
+    <div id="loginSuccess" class="alert alert-success text-center" style="display: none;">
+      Login successful! Redirecting to your dashboard...
+    </div>
+
+    <form id="login-form" class="mx-auto" style="max-width: 400px;">
+      <div class="mb-3">
+        <input type="email" class="form-control" name="email" placeholder="Email Address" required />
+      </div>
+      <div class="mb-3">
+        <input type="password" class="form-control" name="password" placeholder="Password" required />
+      </div>
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-danger">Login</button>
+      </div>
+    </form>
+  </div>
+
+  <footer class="bg-danger text-white py-4 mt-auto">
+    <div class="container text-center">
+      <p class="mb-1">&copy; 2025 YorkRealty. All rights reserved.</p>
+      <p class="mb-0">Built for York University students to find and post off-campus housing with ease.</p>
+      <p class="mt-2">Contact us at
+        <a href="mailto:info@yorkrealty.ca" class="text-white fw-bold">info@yorkrealty.ca</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
